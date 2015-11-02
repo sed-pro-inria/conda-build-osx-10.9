@@ -1,0 +1,44 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+  # Set vagrant box.
+  config.vm.box = "AndrewDryga/osx-mavericks-0.1.0"
+
+  # Synced folder
+  config.vm.synced_folder ".", "/vagrant",
+    type: "rsync"
+
+  # Copy xcode packages (See README.md).
+  config.vm.provision "file",
+      source: "~/xcode/xcode_3.2.6_and_ios_sdk_4.3.dmg",
+      destination: "xcode_3.2.6_and_ios_sdk_4.3.dmg"
+
+  config.vm.provision "file",
+      source: "~/xcode/xcode4630916281a.dmg",
+      destination: "xcode4630916281a.dmg"
+
+  config.vm.provision "file",
+      source: "~/xcode/xcode_5.1.1.dmg",
+      destination: "xcode_5.1.1.dmg"
+
+  config.vm.provision "file",
+      source: "~/xcode/Xcode_6.4.dmg",
+      destination: "Xcode_6.4.dmg"
+
+  # Accept xtool license
+  config.vm.provision "shell", 
+    path: "script/run_accept_xcode_license.sh",
+    privileged: true
+
+  # SDK
+  config.vm.provision "shell",
+    path: "script/sdk.sh",
+    privileged: true
+
+  # Free space
+  config.vm.provision "shell",
+    path: "script/freespace.sh"
+
+end

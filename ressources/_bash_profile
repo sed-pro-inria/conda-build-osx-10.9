@@ -1,0 +1,21 @@
+# Set PATH.
+export PATH=/Users/vagrant/miniconda3/bin:/usr/local/ccache/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
+# Source global definitions.
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# Use bash vim mode.
+set -o vi
+
+# Set vi as editor.
+export EDITOR=/usr/bin/vim
+
+# Configure prompt.
+PS1="\h:\W$ "
+
+VAGRANT_BOX_NAME=osx-10.9
+VAGRANT_BOX_VERSION=0.2.0
+
+alias upload="anaconda upload --user inria-pro-sed --channel main --channel ${VAGRANT_BOX_NAME}-${VAGRANT_BOX_VERSION}" 
