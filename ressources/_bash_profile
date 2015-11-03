@@ -16,6 +16,6 @@ export EDITOR=/usr/bin/vim
 PS1="\h:\W$ "
 
 VAGRANT_BOX_NAME=osx-10.9
-VAGRANT_BOX_VERSION=0.2.0
+VAGRANT_BOX_VERSION=1.0.0
 
 alias upload="anaconda upload --user inria-pro-sed --channel main --channel ${VAGRANT_BOX_NAME}-${VAGRANT_BOX_VERSION}" 

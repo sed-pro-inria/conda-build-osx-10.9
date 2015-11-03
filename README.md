@@ -24,3 +24,7 @@ include the corresponding lines.
 
 `conda-build-osx-10.9-base` do not include version number in its
 `_bashprofile`, as conda packages are not build on it.
+
+version number convention: 
+  - base box: version number is always X.0.0
+  - box: version number is X.Y.Z, where X is the version of the base box.
